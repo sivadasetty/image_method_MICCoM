@@ -1,5 +1,5 @@
-LAMMPS fix for calculating many-body forces using image method [Paper](https://aip.scitation.org/doi/full/10.1063/1.4962832).
-======================================================================
+LAMMPS fix for calculating many-body forces using [image method](https://aip.scitation.org/doi/full/10.1063/1.4962832).
+-----------------------------------------------------------------
 
 src
 --------
