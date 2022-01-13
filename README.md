@@ -1,6 +1,9 @@
 LAMMPS fix for calculating many-body forces using [image method](https://aip.scitation.org/doi/full/10.1063/1.4962832).
 -----------------------------------------------------------------
 
+This code is released as a part of [MICCoM](http://miccom-center.org/index) (Midwest Integrated Center for Computational Materials) to calculate three-body forces using `fix` command in LAMMPS. MICCoM develops and disseminates interoperable computational tools - open source software, data, simulation templates, and validation procedures - that enable simulations and predictions of properties of functional materials for energy conversion and of solid-state materials for quantum information science.
+
+
 src
 --------
 - `fix_colloidImage.h` and `fix_colloidImage.cpp` : LAMMPS fix for computing three-body forces using image method (Eq. 29 in [Qin et al.](https://aip.scitation.org/doi/full/10.1063/1.4962832))
@@ -20,4 +23,4 @@ Syntax
 
 Acknowledgements
 ----------------
-This code is released as a part of [MICCoM](http://miccom-center.org/index) (Midwest Integrated Center for Computational Materials) to calculate three-body forces using `fix` command in LAMMPS. MICCoM develops and disseminates interoperable computational tools - open source software, data, simulation templates, and validation procedures - that enable simulations and predictions of properties of functional materials for energy conversion and of solid-state materials for quantum information science. This work was supported by MICCoM, as part of the Computational Materials Science Program funded by the U.S. Department of Energy, Office of Science, Basic Energy Sciences, Materials Sciences and Engineering Division.
+This work was supported by [MICCoM](http://miccom-center.org/index) (Midwest Integrated Center for Computational Materials), as part of the Computational Materials Science Program funded by the U.S. Department of Energy, Office of Science, Basic Energy Sciences, Materials Sciences and Engineering Division.
