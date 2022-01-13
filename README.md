@@ -1,7 +1,7 @@
 LAMMPS fix for calculating many-body forces using [image method](https://aip.scitation.org/doi/full/10.1063/1.4962832).
 -----------------------------------------------------------------
 
-This code is released as a part of [MICCoM](http://miccom-center.org/index) (Midwest Integrated Center for Computational Materials) to calculate three-body forces using `fix` command in LAMMPS. MICCoM develops and disseminates interoperable computational tools - open source software, data, simulation templates, and validation procedures - that enable simulations and predictions of properties of functional materials for energy conversion and of solid-state materials for quantum information science.
+This code is released as a part of [<img src="/misc/MICCoM_logo_white_transparent.png" alt="http://miccom-center.org/index" title="MICCoM" width="18"/> MICCoM](http://miccom-center.org/index) (Midwest Integrated Center for Computational Materials) to calculate three-body forces using `fix` command in LAMMPS. MICCoM develops and disseminates interoperable computational tools - open source software, data, simulation templates, and validation procedures - that enable simulations and predictions of properties of functional materials for energy conversion and of solid-state materials for quantum information science.
 
 
 src
