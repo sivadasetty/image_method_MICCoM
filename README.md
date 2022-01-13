@@ -8,7 +8,7 @@ src
 Installation
 ------------
 - Copy `src/fix_colloidImage.cpp` and `src/fix_colloidImage.h` into lammps/src/ directory.
-- Build LAMMPS.
+- Build [LAMMPS](https://docs.lammps.org/Build_cmake.html).
 
 Syntax
 -------
