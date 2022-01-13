@@ -15,7 +15,7 @@ Syntax
 - `fix ID group-ID colloid/image ion-type-start IIII einner XXXX`
 	- IIII: start ID of ion type.
 	- XXXX: dielectric constant of particle.
-- Eg: `fix fix_colloid all colloid/image ion-type-start 11 einner 8000`
+- Eg: `fix fix_colloid all colloid/image ion-type-start 11 einner 100`
 	- See example LAMMPS input script in `examples` for performing ten particle simulations. 
 
 Acknowledgements
