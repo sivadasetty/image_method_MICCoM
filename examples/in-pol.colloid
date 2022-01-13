@@ -1,0 +1,65 @@
+#Siva Dasetty
+#Ferguson lab
+#12/11/20
+
+#Example script for ten homogeneous nanoparticles in reduced units.
+
+#Global settings
+units           lj          # reduced units
+boundary        f f f       # non-periodic fixed box
+atom_style      charge      # related type of attributes of atoms LAMMPS related
+atom_modify     map array   # not important here; useful when system is large
+dimension       3           # number of dimensions
+
+#Topology settings (LJ potential for dispersion + Coulombic for electrostatic interactions)
+pair_style      hybrid/overlay lj/expand 2.5 coul/cut 85
+
+#Define region 
+region          nonperiodicbox block 0 200 0 200 0 200 
+create_box      1 nonperiodicbox
+region          initsph sphere 100 100 100 25 units box
+lattice         fcc 0.000176777 
+create_atoms    1 region initsph units box
+#create_atoms    1 random 10 1234 initsph units box
+
+set             type 1 charge -50
+mass            * 1
+
+#continue topology; no mixing rules used; cross pair sigma and eps specified directly; shift for shifting at cutoff
+pair_coeff      * * lj/expand 1 1 19
+pair_coeff      * * coul/cut
+pair_modify     shift yes 
+
+#Define spherical volume potential
+region sph sphere 100 100 100 42.5 units box
+fix confine all wall/region sph harmonic 10.0 0.0 12.5
+
+#Solvent dielectric constant
+dielectric      100.0
+
+#Image method; many-body polarization; 3-body force term
+# syntax: fix "fix name" "particles" colloid/image ion-type-start "start type number of ions" einner "dielectric of particle"
+fix fix_colloid all colloid/image ion-type-start 11 einner 1000.0
+
+#Neighbor list
+neighbor        0 bin
+neigh_modify    delay 0 every 1 check no
+
+comm_modify     mode single cutoff 20
+
+timestep 0.005
+
+# Generate velocities
+velocity all create 1.0 1234567 rot yes dist gaussian
+velocity all zero linear
+
+# thermo output
+thermo_style custom etotal ke temp pe evdwl ecoul press vol density
+fix print_thermo all print 100 "$(step) $(etotal) $(ke) $(temp) $(pe) $(evdwl) $(ecoul) $(press) $(vol) $(density)" file log.nvt screen no
+
+#Simulation settings NVT ensemble with Langevin thermostat
+fix fix_nve all nve
+fix fix_temp all langevin 1.0 1.0 0.5 3231212
+fix fix_momentum all momentum 1 linear 1 1 1 # rescale
+run 1
+
