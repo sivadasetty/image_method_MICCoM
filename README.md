@@ -21,7 +21,7 @@ Syntax
 - Eg: `fix fix_colloid all colloid/image ion-type-start 11 einner 100`
 	- See example LAMMPS input script in `examples` for performing ten particle simulations. 
 
-Contriubtors
+Contributors
 ------------
 - Original author: Jiyuan Li ([dePablo group](https://pme.uchicago.edu/group/de-pablo-group), PME, UChicago)
 - Contributors: Siva Dasetty ([Ferguson lab](https://www.ferglab.com), PME, UChicago)
